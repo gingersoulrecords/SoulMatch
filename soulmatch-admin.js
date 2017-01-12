@@ -1,5 +1,5 @@
 // wp-admin scripts
-console.log( soulmatch_admin_data.options );
+//console.log( soulmatch_admin_data.options );
 
 jQuery(function($){
 	jQuery('.soulrepeater-delete').click(soulmatch.delete_repeater);
@@ -8,9 +8,10 @@ jQuery(function($){
 
 var soulmatch = {
 	delete_repeater : function(e){
-		console.log(e);
-		jQuery(this).parents('.postbox').remove();
-		e.preventDefault();
+		if ( confirm( soulmatch_admin_data.confirm ) ) {
+			jQuery(this).parents('.postbox').remove();
+			e.preventDefault();
+		}
 	},
 	add_repeater : function(e){
 		jQuery.get(

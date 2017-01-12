@@ -160,7 +160,7 @@
 					'placeholder'	=> '',
 					'name' => $this->settings['page']['slug']."[{$field_id}][]",
 					'type' => 'text',
-					'value'	=> $values[ $field_id ],
+					'value'	=> isset( $values[ $field_id ] ) ? $values[ $field_id ] : false,
 				);
 				$atts = wp_parse_args( $field['attributes'], $default_attributes );
 				foreach( $atts as $key=>$value ) {
@@ -196,7 +196,7 @@
 				$hidden_atts['value'] = "value='0'";
 				unset( $hidden_atts['class'] );
 				unset( $hidden_atts['id'] );
-				$flat_atts[] = checked( $values[ $field_id ], 1, false );
+				$flat_atts[] = checked( ( isset( $values[ $field_id ] ) ? $values[ $field_id ] : false ), 1, false );
 				$flat_atts 		= implode( ' ', $flat_atts );
 				$hidden_atts 	= implode( ' ', $hidden_atts );
 				echo "<input {$hidden_atts}/>";

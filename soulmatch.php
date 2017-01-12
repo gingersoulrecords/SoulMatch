@@ -48,6 +48,11 @@ class SoulMatch {
 		wp_enqueue_script( 'soulmatch' );
 	}
 	public static function admin_scripts() {
+		$screen = get_current_screen();
+		if ( 'settings_page_soulmatch-settings' != $screen->id) {
+			return false;
+		}
+
 		// wp_register_script( 'somescript', plugins_url( 'js/somescript.js', __FILE__ ), array( 'jquery' ), false, true );
 		wp_register_script( 'soulmatch-admin', plugins_url( 'soulmatch-admin.js', __FILE__ ), array( 'jquery' ), false, true );
 		$data = array(
@@ -65,6 +70,10 @@ class SoulMatch {
 		wp_enqueue_style( 'soulmatch' );
 	}
 	public static function admin_styles() {
+		$screen = get_current_screen();
+		if ( 'settings_page_soulmatch-settings' != $screen->id) {
+			return false;
+		}
 		// wp_register_style( 'somestyle', plugins_url( 'css/somestyle.css', __FILE__ ), array( 'dashicons' ) );
 		wp_register_style( 'soulmatch-admin', plugins_url( 'soulmatch-admin.css', __FILE__ ), array( 'dashicons' ) );
 		wp_add_inline_style( 'soulmatch-admin', '.soulmatch { color:blue; }' );
