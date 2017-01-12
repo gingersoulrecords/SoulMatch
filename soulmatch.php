@@ -57,6 +57,7 @@ class SoulMatch {
 		wp_register_script( 'soulmatch-admin', plugins_url( 'soulmatch-admin.js', __FILE__ ), array( 'jquery' ), false, true );
 		$data = array(
 			'options'	=> self::$options,
+			'confirm' => __( 'Are You sure?', 'soulmatch' ),
 		);
 		wp_localize_script( 'soulmatch-admin', 'soulmatch_admin_data', $data );
 		wp_add_inline_script( 'soulmatch-admin', 'var soulmatch_admin_after = "";', 'after' );
