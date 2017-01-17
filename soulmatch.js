@@ -1,5 +1,5 @@
 // frontend scripts
-console.log( soulmatch_data.options );
+//console.log( soulmatch_data.options );
 
 jQuery(function($){
 
