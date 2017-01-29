@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: SoulMatch
-Plugin URI: http://gingersoulrecords.com
-Description: A starter plugin template
-Version: 0.1.0
+Plugin URI: http://gingersoulrecords.com/soulmatch
+Description: Equalize the heights of grouped elements.
+Version: 1.0.0
 Author: Dave Bloom
 Author URI: http://gingersoulrecords.com
 Text Domain: soulmatch
@@ -57,7 +57,6 @@ class SoulMatch {
 		wp_register_script( 'soulmatch-admin', plugins_url( 'soulmatch-admin.js', __FILE__ ), array( 'jquery' ), false, true );
 		$data = array(
 			'options'	=> self::$options,
-			'confirm' => __( 'Are You sure?', 'soulmatch' ),
 		);
 		wp_localize_script( 'soulmatch-admin', 'soulmatch_admin_data', $data );
 		wp_add_inline_script( 'soulmatch-admin', 'var soulmatch_admin_after = "";', 'after' );
@@ -66,9 +65,9 @@ class SoulMatch {
 
 	public static function styles() {
 		// wp_register_style( 'somestyle', plugins_url( 'css/somestyle.css', __FILE__ ), array( 'dashicons' ) );
-		wp_register_style( 'soulmatch', plugins_url( 'soulmatch.css', __FILE__ ), array( 'dashicons' ) );
-		wp_add_inline_style( 'soulmatch', '.soulmatch { color:blue; }' );
-		wp_enqueue_style( 'soulmatch' );
+		//wp_register_style( 'soulmatch', plugins_url( 'soulmatch.css', __FILE__ ), array( 'dashicons' ) );
+		//wp_add_inline_style( 'soulmatch', '.soulmatch { color:blue; }' );
+		//wp_enqueue_style( 'soulmatch' );
 	}
 	public static function admin_styles() {
 		$screen = get_current_screen();
