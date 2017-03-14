@@ -53,7 +53,6 @@ class SoulMatch {
 			return false;
 		}
 
-		// wp_register_script( 'somescript', plugins_url( 'js/somescript.js', __FILE__ ), array( 'jquery' ), false, true );
 		wp_register_script( 'soulmatch-admin', plugins_url( 'soulmatch-admin.js', __FILE__ ), array( 'jquery' ), false, true );
 		$data = array(
 			'options'	=> self::$options,
