@@ -2,7 +2,7 @@
 /*
 Plugin Name: SoulMatch
 Plugin URI: http://gingersoulrecords.com
-Description: A starter plugin template
+Description: Equalize the heights of any grouped element. A plugin powered by Liam Brummitt's excellent jquery-match-height script.
 Version: 0.1.0
 Author: Dave Bloom
 Author URI: http://gingersoulrecords.com
