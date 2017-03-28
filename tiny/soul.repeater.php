@@ -10,10 +10,33 @@
 			public function __construct( $settings, $parent ) {
 				$this->settings = $settings;
 				$this->parent = $parent;
+				if ( isset( $settings['links'] ) ) {
+					add_filter( "plugin_action_links_{$settings['links']['file']}", array( $this, 'list_link' ) );
+				}
 				add_action( 'admin_menu', 					array( $this, 'init_page' ) );
 				add_action( 'init', 								array( $this, 'save') );
 				add_action( 'wp_ajax_add_repeater',	array( $this, 'ajax' ) );
 				// add_action( 'admin_menu', array( $this, 'init_fields' ) );
+			}
+			public function list_link( $links ) {
+				foreach( $this->settings['links']['links'] as $link ) {
+					$link_defaults = array(
+						'uri'	=> $this->_get_menu_uri(),
+						'title' => '',
+						'class' => '',
+					);
+					$link = wp_parse_args( $link, $link_defaults );
+					$link = "<a href='{$link['uri']}' class='{$link['class']}'>{$link['title']}</a>";
+					$links[] = $link;
+				}
+				return $links;
+			}
+			private function _get_menu_uri() {
+				if( isset( $this->settings['page']['parent'] ) ) {
+				} else {
+					$uri = admin_url( "options-general.php?page={$this->settings['page']['slug']}" );
+				}
+				return $uri;
 			}
 			public function ajax() {
 				if ( !current_user_can( 'manage_options') ) {

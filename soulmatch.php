@@ -81,6 +81,14 @@ class SoulMatch {
 
 	public static function init_repeater() {
 		$settings = array(
+			'links' => array(
+				'file'	=> plugin_basename( __FILE__ ),
+				'links' => array(
+					array(
+						'title'	=> __( 'Settings', 'soulmatch' ),
+					),
+				),
+			),
 			'page' => array(
 				'title' 			=> __( 'SoulMatch Settings', 'soulmatch' ),
 				'menu_title'	=> __( 'SoulMatch', 'soulmatch' ),
