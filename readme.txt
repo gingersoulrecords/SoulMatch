@@ -4,7 +4,7 @@ Donate link: http://gingersoulrecords.com/
 Tags: match height, equal height, equalize height
 Requires at least: 4.6
 Tested up to: 4.7
-Stable tag: 0.1.0
+Stable tag: 0.1.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,6 +33,10 @@ Go to `WP Admin > Settings > SoulMatch` and define CSS selectors for the element
 1. Settings page
 
 == Changelog ==
+
+= 0.1.1 =
+* add .filter(':visible') for better matching
+* add a hook to re-match on window resize event 
 
 = 0.1.0 =
 * first version to be submitted to wordpress.org

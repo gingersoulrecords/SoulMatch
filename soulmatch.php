@@ -3,7 +3,7 @@
 Plugin Name: SoulMatch
 Plugin URI: http://gingersoulrecords.com/soulmatch
 Description: Equalize the heights of grouped elements.
-Version: 0.1.0
+Version: 0.1.1
 Author: Dave Bloom
 Author URI: http://gingersoulrecords.com
 Text Domain: soulmatch
