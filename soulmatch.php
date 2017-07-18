@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: SoulMatch
-Plugin URI: http://gingersoulrecords.com/soulmatch
+Plugin URI: https://gingersoulrecords.com/soulmatch
 Description: Equalize the heights of grouped elements.
-Version: 0.1.1
+Version: 0.1.2
 Author: Dave Bloom
 Author URI: http://gingersoulrecords.com
 Text Domain: soulmatch
